@@ -1,0 +1,42 @@
+{
+    "name": "jarjak/amazon",
+    "description": "Move Bolt images and files to Amazon S3 Storage",
+    "type": "bolt-extension",
+    "keywords": [
+        "storage",
+        "filesystem",
+        "amazon"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jarek Jakubowski",
+            "email": "egger1991@gmail.com"
+        }
+    ],
+    "require": {
+        "bolt/bolt": "^3.5",
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "league/flysystem-cached-adapter": "^1.0",
+        "predis/service-provider": "^1.0",
+        "predis/predis": "^1.1"
+    },
+    "config": {
+        "platform": {
+            "php": "7.0"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Bolt\\Extension\\JarJak\\Amazon\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master" : "1.0.x-dev"
+        },
+        "bolt-class": "Bolt\\Extension\\JarJak\\Amazon\\AmazonExtension"
+    }
+}

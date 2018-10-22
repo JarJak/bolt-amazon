@@ -1,0 +1,4 @@
+bucket_region:
+bucket_name:
+filesystem_prefix: ''
+client_version: 'latest'
