@@ -39,7 +39,7 @@ For auth it uses env variables (those can't be set through yaml config):
 Because of efficiency problem you can use limit for file listings by env variable:
  - AWS_FILE_LIST_LIMIT
 
-If it is not defined in env file or set for 0 then limit is disabled.
+It defaults to 1000 files in single folder.
 
 Using Redis as cache
 --------------------

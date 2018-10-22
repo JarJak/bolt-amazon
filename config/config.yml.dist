@@ -1,4 +1,33 @@
+# All those settings can be configured via ENV variables
+
+# set to 1 or 0, default: 0 (disabled)
+enabled: 0
+
+# default: latest
+client_version: 'latest'
+
+# REQUIRED aws access data (for security reasons you will still need to create two ENV variables: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY)
 bucket_region:
 bucket_name:
+
+# default: ''
 filesystem_prefix: ''
-client_version: 'latest'
+
+# default: 'files'
+filesystem_name: 'files'
+
+# Sometimes there are issues when listing too many files from single folder, so there is a limit of it to display. It can be adjusted to your needs. Default: 1000
+file_list_limit: 1000
+
+# filesystem's cache TTL in seconds, default: 3600
+cache_ttl: 3600
+
+# set to 1 or 0, default: 1 (enabled)
+use_redis: 1
+
+# If you don't use Redis client the extension will create one for you.
+# if you already have Redis, following settings won't be used.
+# add those only if you don't have Redis already configured.
+redis_host:
+redis_port:
+redis_prefix:

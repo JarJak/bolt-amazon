@@ -84,7 +84,7 @@ class AmazonExtension extends SimpleExtension
     /**
      * @var int
      */
-    protected $fileListLimit;
+    protected $fileListLimit = 1000;
 
     protected function setupConfig(): void
     {
