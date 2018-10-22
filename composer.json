@@ -1,5 +1,5 @@
 {
-    "name": "jarjak/amazon",
+    "name": "jarjak/bolt-amazon",
     "description": "Move Bolt images and files to Amazon S3 Storage",
     "type": "bolt-extension",
     "keywords": [
