@@ -17,10 +17,12 @@
     "require": {
         "bolt/bolt": "^3.5",
         "league/flysystem-aws-s3-v3": "^1.0",
-        "league/flysystem-cached-adapter": "^1.0",
-        "predis/service-provider": "^1.0",
-        "predis/predis": "^1.1"
+        "league/flysystem-cached-adapter": "^1.0"
     },
+    "suggest": {
+        "predis/service-provider": "For better caching",
+        "predis/predis": "For better caching"
+    }
     "config": {
         "platform": {
             "php": "7.0"

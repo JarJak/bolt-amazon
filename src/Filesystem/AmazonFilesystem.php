@@ -11,7 +11,7 @@ class AmazonFilesystem extends Filesystem
     /**
      * @var int
      */
-    private $awsFileListLimit = 1000;
+    private $awsFileListLimit = 0;
 
     public function setAwsFileListLimit(int $limit): void
     {

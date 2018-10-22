@@ -180,14 +180,14 @@ class AmazonExtension extends SimpleExtension
             return $app['filesystem']->getFilesystem($this->filesystemName);
         });
     }
-
-    protected function registerAssetsPackage(Application $app): void
+    protected function registerAssetsPackage(Application $app)
     {
+        $app['amazon_base_url'] = $this->getAssetsBaseUrl();
         $app['asset.packages'] = $app->share($app->extend(
             'asset.packages',
             function ($packages, $app) {
                 $package = new UrlPackage(
-                    $this->getAssetsBaseUrl(),
+                    $app['amazon_base_url'],
                     $app['asset.version_strategy']($this->filesystemName),
                     $app['asset.context']
                 );
@@ -204,9 +204,7 @@ class AmazonExtension extends SimpleExtension
     protected function getAssetsBaseUrl()
     {
         $baseUrl = "https://s3.{$this->bucketRegion}.amazonaws.com/{$this->bucketName}/";
-        if ($this->filesystemPrefix) {
-            $baseUrl .= "{$this->filesystemPrefix}/";
-        }
+        if ($this->filesystemPrefix) $baseUrl .= "{$this->filesystemPrefix}/";
 
         return $baseUrl;
     }
