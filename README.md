@@ -9,6 +9,18 @@ Requirements
 
 AWS S3 Account.
 
+Also please have a look at `composer.json` and install required (and even suggested) packages:
+```
+    "require": {
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "league/flysystem-cached-adapter": "^1.0"
+    },
+    "suggest": {
+        "predis/service-provider": "For better caching",
+        "predis/predis": "For better caching"
+    },
+```
+
 Configuration
 -------------
 
