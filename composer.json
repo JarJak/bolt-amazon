@@ -22,7 +22,7 @@
     "suggest": {
         "predis/service-provider": "For better caching",
         "predis/predis": "For better caching"
-    }
+    },
     "config": {
         "platform": {
             "php": "7.0"
