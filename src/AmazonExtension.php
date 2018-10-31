@@ -294,7 +294,7 @@ class AmazonExtension extends SimpleExtension
      */
     protected function getCache(Application $app)
     {
-        if (class_exists(ClientServiceProvider::class)) {
+        if ($this->useRedis && class_exists(ClientServiceProvider::class)) {
             if (!$app->offsetExists('predis_cache')) {
                 $app->register(new ClientServiceProvider(), [
                     'predis.parameters' => 'tcp://'.$this->redisHost.':'.$this->redisPort,
