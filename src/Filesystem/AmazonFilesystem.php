@@ -7,6 +7,7 @@ namespace Bolt\Extension\JarJak\Amazon\Filesystem;
 use Bolt\Filesystem;
 use Bolt\Filesystem\Handler\HandlerInterface;
 use Exception;
+use League\Flysystem\AdapterInterface;
 use League\Flysystem\Util\ContentListingFormatter;
 
 class AmazonFilesystem extends Filesystem\Filesystem
@@ -55,6 +56,12 @@ class AmazonFilesystem extends Filesystem\Filesystem
         );
 
         return $contents;
+    }
+
+    public function createDir($dirname, $config = []): void
+    {
+        $config = array_merge($config, ['visibility' => AdapterInterface::VISIBILITY_PUBLIC]);
+        parent::createDir($dirname, $config);
     }
 
     /**
